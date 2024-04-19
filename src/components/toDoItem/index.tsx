@@ -5,7 +5,7 @@ interface ITodoItem {
   item: IItem;
   //   manager
   handleCheck: (e: any, id: string) => void;
-  handleDelete: (e: any, id: string) => void;
+  handleDelete: (id: string) => void;
   handleEdit: (value: string, id: string) => void;
 }
 
@@ -63,7 +63,7 @@ export function ToDoItem({
 
         <button
           onClick={(e) => {
-            handleDelete(e, item.id), setEditMode(false);
+            handleDelete(item.id), setEditMode(false);
           }}
         >
           Delete
